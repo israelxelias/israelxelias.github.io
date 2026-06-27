@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Novus — A full team of AI employees for your business.</title>
+<meta name="description" content="Novus builds a full team of AI employees into your business — they handle the busywork, follow up with every lead, and run the software you already use. Done for you. Book a free call." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#ffffff;
+    --bg-soft:#f5f5f7;
+    --ink:#1d1d1f;
+    --ink-2:#6e6e73;
+    --ink-3:#86868b;
+    --line:#d2d2d7;
+    --blue:#0071e3;
+    --blue-press:#0077ed;
+    --blue-tint:rgba(0,113,227,.08);
+    --radius:22px;
+    --maxw:1040px;
+    --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Inter","Helvetica Neue",Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-weight:600;letter-spacing:-.025em;line-height:1.07}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font);font-size:17px;font-weight:500;line-height:1;padding:14px 28px;border-radius:980px;cursor:pointer;border:1px solid transparent;transition:background .2s ease}
+  .btn-primary{background:var(--blue);color:#fff}
+  .btn-primary:hover{background:var(--blue-press)}
+  .btn-lg{font-size:19px;padding:17px 36px}
+  .btn-sm{font-size:15px;padding:9px 18px}
+  .tlink{color:var(--blue);font-size:17px;font-weight:500;display:inline-flex;align-items:center;gap:4px}
+  .tlink:hover{text-decoration:underline}
+  .tlink .chev{transition:transform .2s}
+  .tlink:hover .chev{transform:translateX(3px)}
+
+  /* nav */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.8);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.07)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:54px}
+  .brand{display:flex;align-items:center;gap:9px;font-size:20px;font-weight:600;letter-spacing:-.02em}
+  .logo{width:26px;height:26px;border-radius:7px;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:700;font-size:15px}
+  .nav-links{display:flex;align-items:center;gap:28px;font-size:14px;color:var(--ink-2)}
+  .nav-links a:hover{color:var(--ink)}
+  @media(max-width:760px){.nav-links{display:none}}
+
+  /* hero */
+  .hero{text-align:center;padding:94px 0 30px}
+  .eyebrow{font-size:17px;font-weight:600;color:var(--blue);letter-spacing:-.01em;margin-bottom:16px}
+  .hero h1{font-size:clamp(40px,6.4vw,74px);max-width:15ch;margin:0 auto 26px}
+  .hero p.sub{font-size:clamp(19px,2.4vw,25px);color:var(--ink-2);max-width:640px;margin:0 auto 36px;font-weight:400;letter-spacing:-.01em}
+  .hero-cta{display:flex;gap:24px;justify-content:center;align-items:center;flex-wrap:wrap}
+  .hero-micro{margin-top:24px;font-size:15px;color:var(--ink-3)}
+
+  /* hero visual */
+  .hero-visual{max-width:760px;margin:62px auto 0}
+  .panel{background:var(--bg-soft);border-radius:28px;padding:34px;box-shadow:0 30px 70px -30px rgba(0,0,0,.25)}
+  .panel-row{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:8px}
+  .pnode{text-align:center;padding:18px 10px}
+  .pnode .pi{width:52px;height:52px;border-radius:14px;background:#fff;display:grid;place-items:center;margin:0 auto 12px;box-shadow:0 2px 10px rgba(0,0,0,.06);color:var(--blue)}
+  .pnode .pt{font-size:16px;font-weight:600;letter-spacing:-.01em}
+  .pnode .ps{font-size:13.5px;color:var(--ink-2);margin-top:3px}
+  .parrow{color:var(--ink-3)}
+  @media(max-width:640px){.panel-row{grid-template-columns:1fr}.parrow{transform:rotate(90deg);justify-self:center}}
+
+  /* sections */
+  section{position:relative}
+  .sec{padding:clamp(78px,10vw,122px) 0}
+  .sec.soft{background:var(--bg-soft)}
+  .sec-head{text-align:center;max-width:700px;margin:0 auto 60px}
+  .sec-head h2{font-size:clamp(30px,4.4vw,52px);margin-bottom:16px}
+  .sec-head p{font-size:clamp(17px,2vw,21px);color:var(--ink-2);font-weight:400;letter-spacing:-.01em}
+
+  /* pillars (the difference) */
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:44px}
+  .pillar .ic{width:52px;height:52px;border-radius:14px;background:var(--blue-tint);color:var(--blue);display:grid;place-items:center;margin-bottom:20px}
+  .pillar h3{font-size:21px;margin-bottom:10px}
+  .pillar p{font-size:16px;color:var(--ink-2);line-height:1.55}
+  @media(max-width:780px){.pillars{grid-template-columns:1fr;gap:40px}}
+
+  /* solutions cards */
+  .scards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .scard{background:#fff;border-radius:var(--radius);padding:32px;box-shadow:0 4px 24px rgba(0,0,0,.05)}
+  .scard .ic{width:46px;height:46px;border-radius:12px;background:var(--blue-tint);color:var(--blue);display:grid;place-items:center;margin-bottom:18px}
+  .scard h3{font-size:20px;margin-bottom:9px}
+  .scard p{font-size:15.5px;color:var(--ink-2);line-height:1.55}
+  @media(max-width:780px){.scards{grid-template-columns:1fr}}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .step{padding:34px 30px;background:var(--bg);border-radius:var(--radius);box-shadow:0 4px 24px rgba(0,0,0,.05)}
+  .sec.soft .step{background:#fff}
+  .step .num{font-size:15px;font-weight:600;color:var(--blue);margin-bottom:16px}
+  .step h3{font-size:22px;margin-bottom:10px}
+  .step p{font-size:16px;color:var(--ink-2);line-height:1.55}
+  @media(max-width:780px){.steps{grid-template-columns:1fr}}
+
+  /* founder */
+  .founder{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center;max-width:980px;margin:0 auto}
+  .founder-photo{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/5;background:linear-gradient(160deg,#ececf0,#dfe0e6);box-shadow:0 24px 60px -24px rgba(0,0,0,.35)}
+  .founder-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .founder-photo .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;color:var(--ink-3);font-size:14px;line-height:1.5}
+  .founder-photo .ph code{color:var(--blue);font-size:13px}
+  .founder .tag{font-size:15px;font-weight:600;color:var(--blue);margin-bottom:14px}
+  .founder h2{font-size:clamp(27px,3.4vw,40px);margin-bottom:20px}
+  .founder p{font-size:17px;color:var(--ink-2);line-height:1.6;margin-bottom:16px}
+  .founder p strong{color:var(--ink);font-weight:600}
+  .fstats{display:flex;gap:32px;margin-top:26px;flex-wrap:wrap}
+  .fstat .n{font-size:30px;font-weight:600;letter-spacing:-.03em}
+  .fstat .n span{color:var(--blue)}
+  .fstat .l{font-size:14px;color:var(--ink-2);margin-top:2px}
+  .founder .sig{margin-top:26px;font-size:16px;font-weight:600}
+  .founder .sig span{display:block;font-size:14px;color:var(--ink-3);font-weight:400;margin-top:2px}
+  @media(max-width:780px){.founder{grid-template-columns:1fr;gap:36px}.founder-photo{width:100%;max-width:300px;margin:0 auto}}
+
+  /* testimonials */
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .quote{background:#fff;border-radius:var(--radius);padding:30px;box-shadow:0 4px 24px rgba(0,0,0,.05);display:flex;flex-direction:column}
+  .quote .stars{color:var(--blue);font-size:15px;letter-spacing:2px;margin-bottom:14px}
+  .quote p{font-size:16.5px;color:var(--ink);line-height:1.55;margin-bottom:20px;flex:1}
+  .quote .who{font-size:14px;color:var(--ink-2)}
+  .quote .who b{display:block;color:var(--ink);font-weight:600;font-size:15px}
+  .quote-note{text-align:center;font-size:13px;color:var(--ink-3);margin-top:26px}
+  @media(max-width:780px){.quotes{grid-template-columns:1fr}}
+
+  /* faq */
+  .faq{max-width:720px;margin:0 auto}
+  .qa{border-bottom:1px solid var(--line)}
+  .qa:first-child{border-top:1px solid var(--line)}
+  .qa button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;background:none;border:none;color:var(--ink);font-family:var(--font);font-weight:600;font-size:20px;letter-spacing:-.02em;text-align:left;padding:26px 0;cursor:pointer}
+  .qa button .pm{flex-shrink:0;color:var(--ink-3);font-size:26px;font-weight:300;transition:transform .2s}
+  .qa.open button .pm{transform:rotate(45deg)}
+  .qa .ans{max-height:0;overflow:hidden;transition:max-height .3s ease}
+  .qa .ans p{color:var(--ink-2);font-size:17px;line-height:1.6;padding-bottom:26px;max-width:62ch}
+
+  /* closing cta */
+  .close{text-align:center;padding:clamp(94px,12vw,144px) 0}
+  .close h2{font-size:clamp(34px,5.2vw,62px);margin-bottom:20px;max-width:16ch;margin-left:auto;margin-right:auto}
+  .close p{font-size:clamp(18px,2.2vw,22px);color:var(--ink-2);max-width:560px;margin:0 auto 36px;font-weight:400}
+  .close .micro{font-size:15px;color:var(--ink-3);margin-top:22px}
+
+  /* footer */
+  footer{background:var(--bg-soft);border-top:1px solid rgba(0,0,0,.06);padding:36px 0;font-size:13px;color:var(--ink-3)}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .foot a{color:var(--ink-3)}.foot a:hover{color:var(--ink)}
+  .foot .fl{display:flex;gap:22px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <div class="brand"><span class="logo">N</span> Novus</div>
+    <nav class="nav-links">
+      <a href="#difference">Why Novus</a>
+      <a href="#handle">What it handles</a>
+      <a href="#founder">Who we are</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="https://calendly.com/seerjacob/novus-ai" class="btn btn-primary btn-sm">Book a call</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">AI employees, built into your business</div>
+    <h1>Replace your next hire with a team of AI that never sleeps.</h1>
+    <p class="sub">Novus builds a full team of AI employees into your business — they handle the busywork, follow up with every lead, and run the software you already use. Done for you, start to finish.</p>
+    <div class="hero-cta">
+      <a href="https://calendly.com/seerjacob/novus-ai" class="btn btn-primary btn-lg">Book a free call</a>
+      <a href="#difference" class="tlink">See how it works <span class="chev">›</span></a>
+    </div>
+    <div class="hero-micro">Live in weeks · no tech jargon · no pressure</div>
+
+    <div class="hero-visual">
+      <div class="panel">
+        <div class="panel-row">
+          <div class="pnode">
+            <div class="pi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13a9 9 0 0 1 9-9"/><path d="M21 11a9 9 0 0 1-9 9"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <div class="pt">They work</div>
+            <div class="ps">Leads, follow-ups & busywork, handled 24/7</div>
+          </div>
+          <div class="parrow"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></div>
+          <div class="pnode">
+            <div class="pi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+            <div class="pt">You approve</div>
+            <div class="ps">A quick yes on anything that matters</div>
+          </div>
+          <div class="parrow"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></div>
+          <div class="pnode">
+            <div class="pi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></div>
+            <div class="pt">You grow</div>
+            <div class="ps">More done, more revenue, more time back</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE DIFFERENCE (pillars) -->
+<section class="sec soft" id="difference">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Not a chatbot. A workforce.</h2>
+      <p>Most AI gives you one tool to learn. Novus gives you a whole team of AI employees that runs your business — and you stay in charge of all of it.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M2 20a7 7 0 0 1 14 0"/><path d="M17 5a3 3 0 0 1 0 6"/><path d="M22 20a6 6 0 0 0-4-5.6"/></svg></div>
+        <h3>A team, not a tool</h3>
+        <p>One coordinated system of AI employees working across sales, support and admin — not a single bot you have to babysit.</p>
+      </div>
+      <div class="pillar">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8"/><path d="m10 11 3 2-3 2z"/></svg></div>
+        <h3>It runs the tools you already use</h3>
+        <p>Your email, your CRM, your portals, your spreadsheets. If your team can do it on a screen, your AI employees can do it too.</p>
+      </div>
+      <div class="pillar">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>You're always in control</h3>
+        <p>They do the work and check with you before anything reaches a customer. Nothing goes out without your say-so.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IT HANDLES (solutions) -->
+<section class="sec" id="handle">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Put your AI employees on the work that's eating your week.</h2>
+      <p>We start with the one thing that'll free up the most time and bring in the most money — then expand from there.</p>
+    </div>
+    <div class="scards">
+      <div class="scard">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4L3 21l1.1-3.6A8.4 8.4 0 1 1 21 11.5z"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></svg></div>
+        <h3>Sales &amp; follow-up</h3>
+        <p>Chase every lead, answer fast, book more calls, and never let an opportunity go cold again.</p>
+      </div>
+      <div class="scard">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a8 8 0 0 1 16 0v5a3 3 0 0 1-3 3h-2"/><rect x="2" y="11" width="4" height="6" rx="1"/><rect x="18" y="11" width="4" height="6" rx="1"/></svg></div>
+        <h3>Customer support</h3>
+        <p>Answer the repetitive questions instantly, day or night, in your brand's voice — so nothing slips.</p>
+      </div>
+      <div class="scard">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
+        <h3>Admin &amp; back office</h3>
+        <p>Data entry, scheduling, reporting, invoicing — the busywork that quietly eats your day, handled.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="sec soft" id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Simple to start. Done for you.</h2>
+      <p>You don't lift a finger on the tech. Here's the whole process.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">Step 1</div>
+        <h3>Book a call</h3>
+        <p>We learn your business and pinpoint exactly where AI will make the biggest difference for you.</p>
+      </div>
+      <div class="step">
+        <div class="num">Step 2</div>
+        <h3>We build it</h3>
+        <p>Your AI employees, tailored to how you work — built, tested and deployed entirely by us. Live in weeks.</p>
+      </div>
+      <div class="step">
+        <div class="num">Step 3</div>
+        <h3>You stay in control</h3>
+        <p>They run in the background and do the work. You simply approve anything that goes out. That's it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="sec" id="founder">
+  <div class="wrap">
+    <div class="founder">
+      <div class="founder-photo">
+        <!-- Drop your photo into novus-site/ as founder.jpg (portrait, ~4:5). It replaces this placeholder automatically. -->
+        <img src="founder.jpg" alt="Israel Elias, founder of Novus" onerror="this.style.display='none'">
+        <span class="ph">📷 Your photo here<br>save it as <code>founder.jpg</code></span>
+      </div>
+      <div>
+        <div class="tag">Who we are</div>
+        <h2>Most people selling AI have never run a business. I have.</h2>
+        <p>I'm <strong>Israel Elias</strong>. I scaled my own business to <strong>$50k/month</strong>, grew my brand past <strong>100,000 followers</strong>, and built a paid community of <strong>over 1,000 members</strong>.</p>
+        <p>That's the difference. Most people bolt on random AI that looks impressive and does nothing. I build systems that actually get results — because I've used the same playbook to grow my own business.</p>
+        <div class="fstats">
+          <div class="fstat"><div class="n">$50k<span>/mo</span></div><div class="l">business scaled to</div></div>
+          <div class="fstat"><div class="n">100k<span>+</span></div><div class="l">followers built</div></div>
+          <div class="fstat"><div class="n">1,000<span>+</span></div><div class="l">paid members</div></div>
+        </div>
+        <div class="sig">Israel Elias<span>Founder, Novus</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS (sample — replace with real client quotes) -->
+<section class="sec soft" id="results">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>What owners are saying.</h2>
+      <p>Real results from real businesses running on Novus.</p>
+    </div>
+    <div class="quotes">
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>“It’s like hiring three people overnight — except they work weekends and never miss a follow-up. We booked 30% more calls in the first month.”</p>
+        <div class="who"><b>[Client name]</b>[Company / industry]</div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>“I got my evenings back. The admin and follow-ups that used to keep me up are just handled now, and I still approve everything that goes out.”</p>
+        <div class="who"><b>[Client name]</b>[Company / industry]</div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>“I don’t understand the tech and I didn’t need to. They set the whole thing up, and now my business basically runs itself in the background.”</p>
+        <div class="who"><b>[Client name]</b>[Company / industry]</div>
+      </div>
+    </div>
+    <div class="quote-note">Sample placeholders — replace with real client quotes before launch.</div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Quick questions.</h2>
+    </div>
+    <div class="faq">
+      <div class="qa">
+        <button>I don't really get AI. Is that a problem?<span class="pm">+</span></button>
+        <div class="ans"><p>Not at all — that's our job. You don't need to understand any of the tech. We handle all of it; you just get the results.</p></div>
+      </div>
+      <div class="qa">
+        <button>Will it do things without my say-so?<span class="pm">+</span></button>
+        <div class="ans"><p>Never. You approve anything that goes out to a customer. The AI does the heavy lifting, and you stay fully in control.</p></div>
+      </div>
+      <div class="qa">
+        <button>Do I have to switch the tools I already use?<span class="pm">+</span></button>
+        <div class="ans"><p>No. Your AI employees work inside the tools you already have — your email, CRM, portals and spreadsheets. If your team can do it on a screen, they can too.</p></div>
+      </div>
+      <div class="qa">
+        <button>What does it cost, and how fast am I live?<span class="pm">+</span></button>
+        <div class="ans"><p>It depends on what we build for you. Most setups are live within a few weeks, and we'll give you a straight number on the call — no obligation.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING CTA -->
+<section class="close soft">
+  <div class="wrap">
+    <h2>See what AI can do for your business.</h2>
+    <p>Book a free 30-minute call. We'll show you exactly where AI can save you time and make you money — whether you work with us or not.</p>
+    <a href="https://calendly.com/seerjacob/novus-ai" class="btn btn-primary btn-lg">Book a free call</a>
+    <div class="micro">No tech jargon. No pressure. Just a clear plan.</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot">
+    <div>© 2026 Novus · Built on Anthropic's Claude</div>
+    <div class="fl">
+      <a href="#difference">Why Novus</a>
+      <a href="#handle">What it handles</a>
+      <a href="#founder">Who we are</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://calendly.com/seerjacob/novus-ai">Book a call</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.qa button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var qa=b.parentElement, ans=qa.querySelector('.ans'), open=qa.classList.contains('open');
+      document.querySelectorAll('.qa').forEach(function(x){x.classList.remove('open');x.querySelector('.ans').style.maxHeight=null;});
+      if(!open){qa.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px';}
+    });
+  });
+</script>
+</body>
+</html>
